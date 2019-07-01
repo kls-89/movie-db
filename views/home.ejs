@@ -1,0 +1,20 @@
+<% include partials/header %>
+
+<div class="container">
+    <h2 class="text-center">Movie Results</h2>
+<a href="/">Search Again</a>
+    <% results.forEach(movie => { %>
+        <a href="/results/<%= movie.imdbID%>">
+            <div>
+            <h3><%= movie.Title %> (<%= movie.Year %>)</h3>
+            <% if (movie.Poster === "N/A") {%>
+                <span>No Movie Poster Available!</span>
+                <% } else { %>
+                    
+                        <img class="img-fluid" src="<%= movie.Poster %>" alt="<%= movie.Title %>">
+            <% } %>
+        </div>
+        </a>
+    <% }) %>
+</div>
+<% include partials/footer %>

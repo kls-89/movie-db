@@ -1,0 +1,21 @@
+<% include partials/header %>
+<div class="container">
+    <h1 class="text-center"><%= movieDetail.Title%> (<%=movieDetail.Year%>)</h1>
+<p class="lead text-center"><em><%= movieDetail.Plot%></em></p>
+<p><strong>Starring</strong>: <%= movieDetail.Actors %></p>
+<p><strong>Released</strong>: <%= movieDetail.Released%></p>
+<p><strong>Runtime</strong>: <%= movieDetail.Runtime%></p>
+<p><strong>Rated</strong>: <%= movieDetail.Rated %></p>
+
+<% if (movieDetail.Rated === "TV-Y") { %>
+    <p><strong>KID FRIENDLY!</strong></p>
+<% } %>
+
+<% if (movieDetail.Poster === "N/A") {%>
+    <span>No Movie Poster Available!</span>
+    <% } else { %>
+            <img class="img-fluid" src="<%= movieDetail.Poster %>" alt="<%= movieDetail.Title %>">
+<% } %>
+<a href="/">New Search</a>
+</div>
+<% include partials/footer %>
